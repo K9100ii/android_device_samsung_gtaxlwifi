@@ -23,7 +23,7 @@ LOCAL_PATH := device/samsung/gtaxlwifi
 TARGET_KERNEL_CONFIG := lineage-gtaxlwifi_defconfig
 
 # OTA assertions
-TARGET_OTA_ASSERT_DEVICE := gtaxlwifi,gtaxllte
+TARGET_OTA_ASSERT_DEVICE := gtaxlwifi
 
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 3145728000
