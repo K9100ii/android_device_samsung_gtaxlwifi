@@ -17,7 +17,7 @@
 # Inherit from gtaxl-common
 include device/samsung/gtaxl-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/samsung/gtaxlwifi
+DEVICE_PATH := device/samsung/gtaxlwifi
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineage-gtaxlwifi_defconfig
@@ -30,4 +30,4 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 3145728000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 10737418240
 
 # Properties
-TARGET_VENDOR_PROP += $(LOCAL_PATH)/vendor.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
