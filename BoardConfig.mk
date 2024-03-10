@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
+DEVICE_PATH := device/samsung/gtaxlwifi
+
 # Inherit from gtaxl-common
 include device/samsung/gtaxl-common/BoardConfigCommon.mk
-
-DEVICE_PATH := device/samsung/gtaxlwifi
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineage-gtaxlwifi_defconfig

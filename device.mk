@@ -14,6 +14,17 @@
 # limitations under the License.
 #
 
+# Inherit from gtaxl-common
+$(call inherit-product, device/samsung/gtaxl-common/common.mk)
+
+# Inherit proprietary vendor blobs
+$(call inherit-product, vendor/samsung/gtaxlwifi/gtaxlwifi-vendor.mk)
+
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -21,17 +32,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_PACKAGES += \
     init.gps.rc
 
-# GPS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf \
-    $(LOCAL_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
-
-# Inherit from gtaxl-common
-$(call inherit-product, device/samsung/gtaxl-common/common.mk)
-
-# Call the proprietary setup
-$(call inherit-product, vendor/samsung/gtaxlwifi/gtaxlwifi-vendor.mk)
